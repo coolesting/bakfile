@@ -1,0 +1,11 @@
+== INTRODUCTION
+
+A software to backup your files and folders 
+
+== INSTALLATION
+	
+  git clone git@github.com:coolesting/bakfile.git
+
+== USAGE
+
+Enter your app directory whatever you do any operations
