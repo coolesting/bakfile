@@ -6,6 +6,17 @@ A software to backup your files and folders
 	
   git clone git@github.com:coolesting/bakfile.git
 
-== USAGE
 
-Enter your app directory whatever you do any operations
+== Example of how to use
+
+Enter your app directory whatever you want to do with any operating commands
+
+First, adding your file path to files.bf
+
+then, updating your file to repository.
+
+  rake update
+
+So, installing the backup file to your workstation in anywhere.
+
+  rake install
