@@ -1,26 +1,32 @@
 require 'rake'
-require 'lib.rb'
+require Dir.pwd + "/bakfile.rb"
 
 bf = Bakfile::Basic.new
-HOMEPATH = File.expand_path('~/')
-BASEPATH = Dir.pwd + '/store'
+bf.get_config('config.bf')
 
 #update the backup file to store repository
 task :update do |t|
-	update_file HOMEPATH, BASEPATH
- 	`git add -A && git commit -m 'updating file . ' && git push`
+	Dir.mkdir(bf.configs['repos']) unless File.exist? bf.configs['repos']
+	bf.get_files("files.bf").each do | f |
+		FileUtils.cp_r f, bf.configs['repos']
+		puts "updating file #{f}"
+	end
+	if ENV['-c']
+		`git add -A && git commit -m 'updating files . ' && git push`
+	end
 end
 
-#install the vim application
+#recovery the file to the specifying directory
 task :install do |t|
-	update_file BASEPATH, HOMEPATH
-end
-
-def update_file(from_path, to_path) 
-	files = Dir[from_path + "/.vim*"]
-	files << from_path + '/.bashrc'
-	files.each do | file |
-		FileUtils.cp_r file, to_path 
-		puts "updating file " + file
+	unless File.exist? bf.configs['repos']
+		puts "No repository at #{bf.configs['repos']}"
+		exit
+	end
+	bf.get_files("files.bf").each do | f |
+		path = bf.get_path(f) 
+		if path != nil
+			FileUtils.cp_r path, f
+			puts "updating file #{f}"
+		end
 	end
 end
