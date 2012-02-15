@@ -16,6 +16,12 @@ cmap WQ wq
 cmap Wq wq
 cmap tn tabnew
 
+imap <F2> ''<ESC>i
+imap <F3> ""<ESC>i
+imap <F7> ()<ESC>i
+imap <F8> []<ESC>i
+imap <F9> {}<ESC>i
+
 map <C-h> ^
 map <C-l> $
 map <C-k> {
@@ -26,7 +32,6 @@ nnoremap <silent> <C-Left> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew
 
 "abbreviation
-ab _h [''] <ESC>3h
 ab class class<CR>end<ESC>kA
 ab def def<CR>end<ESC>kA
 ab each each do \|<CR>end<ESC>kA<left>\|
@@ -40,7 +45,7 @@ cmap w!! w !sudo tee >/dev/null %
 
 "NERD_tree
 "git clone git@github.com:scrooloose/nerdtree
-noremap <F4> :NERDTreeToggle<CR>
+noremap <F5> :NERDTreeToggle<CR>
 
 "folder
 au BufWinLeave * mkview

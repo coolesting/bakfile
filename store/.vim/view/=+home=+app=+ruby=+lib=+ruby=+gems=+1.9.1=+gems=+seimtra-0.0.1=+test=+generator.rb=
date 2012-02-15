@@ -108,12 +108,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 38 - ((15 * winheight(0) + 14) / 28)
+let s:l = 48 - ((28 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
+48
 normal! 02l
+lcd /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

@@ -8,29 +8,34 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/sssss
+~MSle0/esc
 
 # Last Substitute Search Pattern:
-~MSle0&^\V# 
+~MSle0~&esc
 
 # Last Substitute String:
-$
+$ESC
 
 # Command Line History (newest to oldest):
 :wq
-:q
+:18,25s/esc/ESC/g
+:18,25$/esc/ESC/g
+:set number
 :w
+:q!
+:q
+:tabnew test/generator.rb
+:%s/creates/@creates/g
+:tabnew lib/bin/base.rb
+:tabnew 
 :tabnew bakfile.rb
 :tabnew lib.rb
 :tabnew files.bf
 :tabnew bin/workhelper
-:tabnew lib/bin/base.rb
 :tabnew lib/seimtra/db.rb
-:set number
 :w]
 :tabnew lib/seimtra/info.rb
 :tabnew lib/seimtra/scfg.rb
-:q!
 :t
 :tabnew lib/seimtra/start.rb
 :%s/@app_contents/@contents/g
@@ -41,7 +46,6 @@ $
 :tabnew lib/seimtra/utils.rb
 :tabnew lib/seimtra/generator.rb
 :%s/@name/@t[:name]/g
-:tabnew test/generator.rb
 :%s/template_contents/tpl_contents/g
 :tabnew lib/bin/projects/
 :%s/@tmp_var/@t/g
@@ -57,24 +61,25 @@ $
 :'<,'>
 :'
 :'<,'>%y+
-:tabnew 
 :tabnew lib/seimtra/test.rb
 :tabnew test/db.rb
 :vm
 :tabnew lib/
 :tabnew lib/seimtra/scaffold.rb
 :%s/route_contents/app_contents/g
-:vi lib/bin/projects/module.rb
-:%s/SCFG.cfg/SCFG::OPTIONS/g
-:set
 
 # Search String History (newest to oldest):
+?/esc
+? ^
+?/sss
+?/@creates
 ?/sssss
+?/creates
+? ^\V# 
+?/module_exist?
 ?/split
 ?/sqlite
 ?/sqlit
-? ^\V# 
-? ^
 ?/docs
 ?/run
 ?/rn
@@ -113,12 +118,7 @@ $
 ?/--route
 ?/style
 ?/name
-?/sss
 ?/:view
-?/t[:view]
-?/@t[:view]
-? @tmp_var
-?/tmp_var
 
 # Expression History (newest to oldest):
 
@@ -129,165 +129,630 @@ $
 
 # Registers:
 "0	LINE	0
-			puts "updating file #{f}"
-"1	LINE	0
-				end
+	imap <F3> ""<ESC>i
+""1	LINE	0
+	a['s']
 "2	LINE	0
-					nil
+	imap <F4> ""<ESC>i
 "3	LINE	0
-				else
+	imap ""
 "4	LINE	0
-					
+	a['s']
 "5	LINE	0
-				if .include? filename
+	a['sd']
 "6	LINE	0
-	
-"7	CHAR	0
-	file.split('/').last
-	
+	a['sdf']
+"7	LINE	0
+	a['sdf']
 "8	LINE	0
-			end
+	a['sdfA'] = sdf
 "9	LINE	0
-	
+	a['']
 "h	CHAR	0
 	vnoremap
 "q	CHAR	0
 	€kd€kd€kd€kd€kd€kd€kd€kd€kd
 "u	CHAR	0
 	iv="content-type" content="text/html; charset=UTF-8">jkukukokki<meta http-e
-""-	CHAR	0
-	@
+"-	CHAR	0
+	3
 
 # File marks:
 'N  40  55  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/scaffold.rb
-'0  1  6  ~/bakfile/files.bf
-'1  20  19  ~/bakfile/Rakefile
-'2  7  11  ~/bakfile/bakfile.rb
-'3  11  48  ~/bakfile/README.rdoc
-'4  24  0  ~/bakfile/Rakefile
-'5  10  25  ~/bakfile/Rakefile
-'6  22  12  ~/bakfile/bakfile.rb
-'7  1  0  ~/workhelper/Rakefile
-'8  1  0  ~/bakfile/Rakefile
-'9  16  0  ~/bakfile/lib.rb
+'0  19  0  ~/.vimrc
+'1  21  0  ~/.vimrc
+'2  25  0  ~/.vimrc
+'3  23  17  ~/.vimrc
+'4  22  17  ~/.vimrc
+'5  25  0  ~/.vimrc
+'6  41  11  ~/.vimrc
+'7  18  0  ~/.vimrc
+'8  48  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+'9  47  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
 
 # Jumplist (newest first):
--'  1  6  ~/bakfile/files.bf
--'  20  19  ~/bakfile/Rakefile
--'  18  0  ~/bakfile/Rakefile
--'  6  0  ~/bakfile/Rakefile
--'  3  0  ~/bakfile/Rakefile
--'  1  0  ~/bakfile/Rakefile
--'  32  2  ~/bakfile/Rakefile
--'  27  15  ~/bakfile/Rakefile
--'  12  0  ~/bakfile/Rakefile
--'  15  3  ~/bakfile/Rakefile
--'  14  13  ~/bakfile/Rakefile
--'  25  0  ~/bakfile/Rakefile
--'  7  11  ~/bakfile/bakfile.rb
--'  1  0  ~/bakfile/bakfile.rb
--'  3  0  ~/bakfile/bakfile.rb
--'  5  0  ~/bakfile/bakfile.rb
--'  9  0  ~/bakfile/bakfile.rb
--'  15  0  ~/bakfile/bakfile.rb
--'  18  0  ~/bakfile/bakfile.rb
--'  25  0  ~/bakfile/bakfile.rb
--'  27  2  ~/bakfile/bakfile.rb
--'  14  2  ~/bakfile/bakfile.rb
--'  24  3  ~/bakfile/Rakefile
--'  11  48  ~/bakfile/README.rdoc
--'  11  0  ~/bakfile/Rakefile
--'  21  12  ~/bakfile/bakfile.rb
--'  1  0  ~/workhelper/Rakefile
--'  2  0  ~/workhelper/Rakefile
--'  5  0  ~/workhelper/Rakefile
--'  11  0  ~/workhelper/Rakefile
--'  16  0  ~/workhelper/Rakefile
--'  24  2  ~/workhelper/Rakefile
--'  16  0  ~/bakfile/lib.rb
--'  24  35  ~/bakfile/lib.rb
--'  22  19  ~/bakfile/lib.rb
--'  23  43  ~/bakfile/lib.rb
--'  8  13  ~/bakfile/lib.rb
--'  9  5  ~/bakfile/Rakefile
--'  2  19  ~/bakfile/Rakefile
--'  1  7  ~/bakfile/lib.rb
--'  17  0  ~/bakfile/Rakefile
--'  5  0  ~/bakfile/Rakefile
--'  1  10  ~/bakfile/config.bf
--'  4  0  ~/bakfile/Rakefile
--'  2  11  ~/bakfile/lib.rb
--'  4  0  ~/bakfile/lib.rb
--'  5  13  ~/bakfile/README.rdoc
--'  1  0  ~/bakfile/README.rdoc
--'  7  12  ~/bakfile/Rakefile
--'  7  39  ~/workhelper/README.rdoc
--'  9  1  ~/workhelper/README.rdoc
--'  10  0  ~/workhelper/README.rdoc
--'  12  0  ~/workhelper/README.rdoc
--'  14  0  ~/workhelper/README.rdoc
--'  16  0  ~/workhelper/README.rdoc
--'  18  0  ~/workhelper/README.rdoc
--'  20  0  ~/workhelper/README.rdoc
--'  9  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/workhelper-0.0.1/README.rdoc
--'  1  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/workhelper-0.0.1/README.rdoc
--'  6  1  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/README.rdoc
--'  4  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/README.rdoc
--'  5  19  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/seimtra.gemspec
--'  5  18  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/info.rb
--'  4  18  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/info.rb
--'  8  21  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/seimtra.gemspec
--'  8  21  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/info.rb
--'  10  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/scfg.rb
--'  3  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/start.rb
--'  20  19  ~/bakfile/Rakefile
--'  18  0  ~/bakfile/Rakefile
--'  6  0  ~/bakfile/Rakefile
--'  3  0  ~/bakfile/Rakefile
--'  1  0  ~/bakfile/Rakefile
--'  32  2  ~/bakfile/Rakefile
--'  27  15  ~/bakfile/Rakefile
--'  12  0  ~/bakfile/Rakefile
--'  15  3  ~/bakfile/Rakefile
--'  14  13  ~/bakfile/Rakefile
--'  25  0  ~/bakfile/Rakefile
--'  7  11  ~/bakfile/bakfile.rb
--'  1  0  ~/bakfile/bakfile.rb
--'  3  0  ~/bakfile/bakfile.rb
--'  5  0  ~/bakfile/bakfile.rb
--'  9  0  ~/bakfile/bakfile.rb
--'  15  0  ~/bakfile/bakfile.rb
--'  18  0  ~/bakfile/bakfile.rb
--'  25  0  ~/bakfile/bakfile.rb
--'  27  2  ~/bakfile/bakfile.rb
--'  14  2  ~/bakfile/bakfile.rb
--'  24  3  ~/bakfile/Rakefile
--'  11  48  ~/bakfile/README.rdoc
--'  11  0  ~/bakfile/Rakefile
--'  21  12  ~/bakfile/bakfile.rb
--'  1  0  ~/workhelper/Rakefile
--'  2  0  ~/workhelper/Rakefile
--'  5  0  ~/workhelper/Rakefile
--'  11  0  ~/workhelper/Rakefile
--'  16  0  ~/workhelper/Rakefile
--'  24  2  ~/workhelper/Rakefile
+-'  19  0  ~/.vimrc
+-'  21  0  ~/.vimrc
+-'  25  0  ~/.vimrc
+-'  63  50  ~/.vimrc
+-'  62  49  ~/.vimrc
+-'  23  13  ~/.vimrc
+-'  20  13  ~/.vimrc
+-'  22  13  ~/.vimrc
+-'  33  0  ~/.vimrc
+-'  38  0  ~/.vimrc
+-'  18  0  ~/.vimrc
+-'  12  0  ~/.vimrc
+-'  8  0  ~/.vimrc
+-'  5  0  ~/.vimrc
+-'  40  11  ~/.vimrc
+-'  41  11  ~/.vimrc
+-'  4  0  ~/.vimrc
+-'  2  0  ~/.vimrc
+-'  48  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  51  5  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  47  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  52  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  30  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  24  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  18  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  6  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  1  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  49  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  2  10  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  5  3  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  23  7  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  17  7  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  3  8  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  28  12  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  29  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  155  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  162  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  163  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  141  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  130  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  124  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  121  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  115  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  104  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  102  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  91  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  60  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  51  33  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  42  13  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+-'  39  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  48  3  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  1  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/docs/common/start.rb
+-'  27  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  32  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  39  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  41  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  43  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  53  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  57  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  77  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  80  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  28  12  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  29  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  155  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  162  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  163  2  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  141  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  130  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  124  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  121  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  115  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  104  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  102  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  91  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  60  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  51  33  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  39  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  48  3  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+-'  1  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/docs/common/start.rb
+-'  27  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  32  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  39  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  41  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  43  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  53  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  57  0  /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+-'  24  0  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
-> ~/bakfile/files.bf
-	"	1	6
-	^	3	38
-	.	3	37
+> ~/.vimrc
+	"	19	0
+	.	19	0
+	+	25	10
+	+	25	6
+	+	25	6
+	+	25	0
+	+	25	6
+	+	25	6
+	+	25	10
+	+	25	0
+	+	19	0
+	+	25	10
+	+	25	10
+	+	25	10
+	+	25	10
+	+	19	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	19	0
+	+	18	0
+	+	19	0
+	+	25	1
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	1
+	+	25	1
+	+	25	1
+	+	18	0
+	+	19	0
+	+	25	0
+	+	19	3
+	+	19	0
+	+	20	11
+	+	23	11
+	+	5	0
+	+	19	16
+	+	19	18
+	+	20	12
+	+	21	12
+	+	22	12
+	+	23	12
+	+	25	0
+	+	25	0
+	+	25	2
+	+	25	2
+	+	19	12
+	+	20	12
+	+	21	12
+	+	22	12
+	+	23	12
+	+	19	17
+	+	25	0
+	+	25	0
+	+	19	17
+	+	25	0
+	+	19	17
+	+	20	16
+	+	22	16
+	+	21	16
+	+	23	16
+	+	25	2
+	+	25	0
+	+	23	17
+	+	19	17
+	+	20	17
+	+	21	17
+	+	22	17
+	+	25	0
+	+	25	0
+	+	25	0
+	+	23	17
+	+	19	16
+	+	20	16
+	+	21	16
+	+	22	16
+	+	25	0
+	+	25	0
+	+	25	0
+	+	48	10
+	+	19	7
+	+	20	7
+	+	25	0
+	+	19	17
+	+	20	17
+	+	21	17
+	+	22	17
+	+	23	17
+	+	25	0
+	+	25	0
+	+	19	13
+	+	20	0
+	+	25	0
+	+	24	0
+	+	19	7
+	+	20	7
+	+	21	7
+	+	21	0
+	+	21	0
+	+	19	0
+
+> ~/repo/ss/NERD_tree_1
+	"	4	0
+	.	1	0
 	+	1	0
-	+	2	0
-	+	4	0
-	+	3	37
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/test/generator.rb
+	"	48	2
+	.	48	0
+	+	7	0
+	+	7	0
+	+	7	0
+	+	9	7
+	+	10	7
+	+	10	7
+	+	9	14
+	+	10	19
+	+	10	19
+	+	10	42
+	+	12	24
+	+	13	30
+	+	15	37
+	+	11	11
+	+	19	14
+	+	19	15
+	+	13	15
+	+	7	14
+	+	7	15
+	+	10	0
+	+	12	0
+	+	17	6
+	+	23	6
+	+	38	6
+	+	32	0
+	+	21	53
+	+	17	19
+	+	34	14
+	+	31	36
+	+	38	46
+	+	39	45
+	+	40	11
+	+	32	39
+	+	33	2
+	+	32	0
+	+	31	38
+	+	49	0
+	+	51	0
+	+	50	0
+	+	25	13
+	+	31	13
+	+	27	51
+	+	28	2
+	+	29	6
+	+	38	6
+	+	39	6
+	+	40	6
+	+	50	14
+	+	49	13
+	+	43	0
+	+	47	0
+	+	43	6
+	+	44	6
+	+	45	6
+	+	43	8
+	+	42	19
+	+	46	33
+	+	49	13
+	+	2	11
+	+	49	4
+	+	5	10
+	+	11	7
+	+	17	7
+	+	23	7
+	+	29	7
+	+	38	7
+	+	39	6
+	+	40	9
+	+	39	9
+	+	42	7
+	+	43	6
+	+	44	6
+	+	45	6
+	+	46	9
+	+	45	9
+	+	44	9
+	+	43	9
+	+	49	4
+	+	49	0
+	+	49	7
+	+	49	19
+	+	2	6
+	+	49	14
+	+	49	0
+	+	49	0
+	+	48	6
+	+	2	10
+	+	48	12
+	+	48	7
+	+	48	7
+	+	49	4
+	+	2	7
+	+	48	36
+	+	49	0
+	+	48	7
+	+	2	15
+	+	48	0
+	+	51	0
+	+	51	0
+	+	48	0
+
+> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/generator.rb
+	"	28	12
+	^	28	13
+	.	83	0
+	+	17	9
+	+	18	9
+	+	21	10
+	+	16	45
+	+	34	4
+	+	29	14
+	+	34	4
+	+	38	4
+	+	34	7
+	+	35	27
+	+	34	3
+	+	35	5
+	+	33	0
+	+	38	0
+	+	38	0
+	+	35	28
+	+	35	41
+	+	44	11
+	+	56	0
+	+	44	27
+	+	52	4
+	+	52	0
+	+	46	13
+	+	45	14
+	+	34	14
+	+	46	24
+	+	35	40
+	+	42	20
+	+	43	0
+	+	51	24
+	+	29	0
+	+	83	9
+	+	46	3
+	+	50	5
+	+	48	0
+	+	49	33
+	+	46	39
+	+	45	18
+	+	51	0
+	+	51	12
+	+	51	23
+	+	49	4
+	+	50	8
+	+	50	6
+	+	50	4
+	+	50	4
+	+	50	28
+	+	49	9
+	+	50	0
+	+	51	0
+	+	34	7
+	+	35	0
+	+	29	16
+	+	30	16
+	+	33	63
+	+	44	8
+	+	37	2
+	+	37	42
+	+	29	10
+	+	30	7
+	+	29	10
+	+	30	7
+	+	29	3
+	+	30	11
+	+	29	2
+	+	30	2
+	+	29	11
+	+	35	3
+	+	37	3
+	+	31	10
+	+	35	15
+	+	37	12
+	+	45	0
+	+	48	12
+	+	49	16
+	+	48	19
+	+	49	50
+	+	51	3
+	+	44	13
+	+	50	9
+	+	54	13
+	+	50	18
+	+	51	8
+	+	50	0
+	+	47	0
+	+	51	0
+	+	55	17
+	+	83	2
+	+	40	2
+	+	41	0
+	+	40	25
+	+	81	0
+	+	82	1
+	+	83	0
+	+	53	0
+	+	44	64
+	+	35	3
+	+	83	0
+	+	82	0
+	+	83	0
+
+> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/projects/module.rb
+	"	155	0
+	^	51	34
+	.	51	33
+	+	3	13
+	+	40	7
+	+	60	0
+	+	39	0
+	+	60	0
+	+	61	0
+	+	42	6
+	+	43	5
+	+	40	7
+	+	42	6
+	+	44	0
+	+	46	0
+	+	47	0
+	+	46	0
+	+	44	2
+	+	46	3
+	+	58	0
+	+	56	0
+	+	57	56
+	+	47	2
+	+	47	0
+	+	47	43
+	+	48	12
+	+	49	0
+	+	47	0
+	+	45	0
+	+	49	0
+	+	39	1
+	+	6	57
+	+	6	0
+	+	6	0
+	+	5	57
+	+	9	31
+	+	5	28
+	+	9	19
+	+	13	47
+	+	9	38
+	+	16	0
+	+	16	2
+	+	16	0
+	+	23	1
+	+	35	0
+	+	21	1
+	+	35	0
+	+	17	0
+	+	35	0
+	+	21	19
+	+	35	3
+	+	23	2
+	+	22	1
+	+	35	0
+	+	27	14
+	+	35	0
+	+	33	35
+	+	35	1
+	+	36	1
+	+	37	1
+	+	38	1
+	+	35	0
+	+	34	1
+	+	17	14
+	+	21	14
+	+	25	14
+	+	21	4
+	+	33	12
+	+	29	9
+	+	17	3
+	+	21	3
+	+	25	3
+	+	29	3
+	+	33	3
+	+	29	27
+	+	25	22
+	+	21	22
+	+	17	22
+	+	31	0
+	+	30	1
+	+	31	6
+	+	50	22
+	+	54	6
+	+	55	0
+	+	53	4
+	+	51	33
+
+> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/docs/common/start.rb
+	"	1	0
+
+> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/bin/base.rb
+	"	60	40
+	^	60	20
+	.	60	19
+	+	140	0
+	+	61	15
+	+	62	2
+	+	61	30
+	+	61	2
+	+	61	3
+	+	61	3
+	+	61	55
+	+	62	5
+	+	63	78
+	+	61	0
+	+	60	66
+	+	61	20
+	+	62	56
+	+	63	23
+	+	60	19
+
+> ~/repo/shell_demo/my.sh
+	"	4	1
+	^	4	2
+	.	4	1
+	+	4	1
+
+> ~/bakfile/README.rdoc
+	"	3	42
+	^	3	43
+	.	3	43
+	+	3	42
+	+	5	14
+	+	7	48
+	+	8	0
+	+	23	0
+	+	9	7
+	+	23	0
+	+	23	0
+	+	23	0
+	+	9	54
+	+	5	0
+	+	9	0
+	+	10	3
+	+	14	20
+	+	18	0
+	+	10	23
+	+	9	0
+	+	9	0
+	+	12	0
+	+	9	0
+	+	11	0
+	+	14	7
+	+	16	37
+	+	18	1
+	+	12	75
+	+	18	12
+	+	20	3
+	+	16	38
+	+	20	39
+	+	22	13
+	+	20	39
+	+	3	43
+
+> ~/bakfile/.gitignore
+	"	1	4
+	^	1	5
+	.	1	4
+	+	1	4
 
 > ~/bakfile/Rakefile
-	"	20	19
-	^	22	24
-	.	22	23
-	+	33	0
+	"	15	45
+	^	15	46
+	.	15	45
 	+	33	42
 	+	33	0
 	+	33	0
@@ -387,6 +852,16 @@ $
 	+	26	2
 	+	27	15
 	+	22	23
+	+	15	45
+
+> ~/bakfile/files.bf
+	"	1	6
+	^	3	38
+	.	3	37
+	+	1	0
+	+	2	0
+	+	4	0
+	+	3	37
 
 > ~/bakfile/bakfile.rb
 	"	18	0
@@ -433,22 +908,6 @@ $
 	+	22	4
 	+	24	3
 	+	20	12
-
-> ~/bakfile/README.rdoc
-	"	11	48
-	^	7	49
-	.	5	0
-	+	3	42
-	+	5	14
-	+	7	48
-	+	8	0
-	+	12	0
-	+	9	7
-	+	12	0
-	+	12	0
-	+	12	0
-	+	11	54
-	+	5	0
 
 > ~/workhelper/Rakefile
 	"	1	0
@@ -551,86 +1010,3 @@ $
 	^	8	22
 	.	8	21
 	+	8	21
-
-> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/info.rb
-	"	5	18
-
-> ~/workhelper/workhelper.gemspec
-	"	5	23
-	^	5	24
-	.	5	23
-	+	1	27
-	+	14	2
-	+	2	22
-	+	3	20
-	+	4	18
-	+	6	32
-	+	7	54
-	+	8	59
-	+	9	13
-	+	11	34
-	+	12	35
-	+	13	22
-	+	3	17
-	+	5	23
-
-> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/scfg.rb
-	"	10	0
-
-> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra/start.rb
-	"	3	0
-
-> ~/workhelper/lib/workhelper.rb
-	"	3	0
-	^	6	16
-	.	3	0
-	+	1	48
-	+	3	12
-	+	3	16
-	+	3	2
-	+	3	6
-	+	3	16
-	+	3	0
-	+	3	5
-	+	3	5
-	+	3	4
-	+	3	6
-	+	3	33
-	+	6	9
-	+	3	11
-	+	6	22
-	+	4	23
-	+	4	0
-	+	5	0
-	+	5	0
-	+	3	0
-	+	6	15
-	+	3	0
-
-> ~/workhelper/lib/workhelper/basic.rb
-	"	1	0
-	^	1	0
-	.	2	0
-	+	1	0
-	+	2	0
-
-> ~/workhelper/lib/workhelper/init.rb
-	"	5	35
-	^	5	36
-	.	5	35
-	+	1	0
-	+	2	10
-	+	4	15
-	+	7	0
-	+	2	30
-	+	5	35
-
-> /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1/lib/seimtra.rb
-	"	2	0
-
-> ~/workhelper/bin/3h
-	"	1	0
-	^	2	19
-	.	2	0
-	+	1	18
-	+	2	0

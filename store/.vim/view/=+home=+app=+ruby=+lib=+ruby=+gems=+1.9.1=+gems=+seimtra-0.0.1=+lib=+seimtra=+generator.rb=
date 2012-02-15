@@ -110,42 +110,40 @@ setlocal wrapmargin=0
 silent! normal! zE
 6,26fold
 6,26fold
-110,129fold
-110,146fold
-151,166fold
-65,178fold
-64,178fold
-180,189fold
+58,76fold
+121,140fold
+121,157fold
+162,177fold
+191,200fold
+100,213fold
 6
 normal zo
 6
 normal zc
 6
 normal zo
-64
-normal zo
-65
-normal zo
-110
-normal zo
-110
-normal zo
-110
-normal zo
-151
-normal zo
-65
+58
 normal zc
-64
+100
 normal zo
-180
+121
 normal zo
-let s:l = 60 - ((28 * winheight(0) + 14) / 29)
+121
+normal zo
+121
+normal zo
+162
+normal zo
+191
+normal zo
+100
+normal zc
+let s:l = 28 - ((22 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-60
-normal! 0
+28
+normal! 012l
 lcd /home/app/ruby/lib/ruby/gems/1.9.1/gems/seimtra-0.0.1
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
